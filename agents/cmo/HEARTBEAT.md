@@ -1,29 +1,14 @@
 **# HEARTBEAT.md -- Agent Heartbeat Checklist**
 
-
-
-
 Run this checklist on every heartbeat. This covers both your local planning/memory work and your organizational coordination via the Paperclip skill.
 
-
-
-
 **## 1. Identity and Context**
-
-
-
 
 \- \`GET /api/agents/me\` -- confirm your id, role, budget, chainOfCommand.
 
 \- Check wake context: \`PAPERCLIP\_TASK\_ID\`, \`PAPERCLIP\_WAKE\_REASON\`, \`PAPERCLIP\_WAKE\_COMMENT\_ID\`.
 
-
-
-
 **## 2. Local Planning Check**
-
-
-
 
 1\. Read today's plan from \`$AGENT\_HOME/memory/YYYY-MM-DD.md\` under "## Today's Plan".
 
@@ -35,30 +20,15 @@ Run this checklist on every heartbeat. This covers both your local planning/memo
 
 5\. Record progress updates in the daily notes.
 
-
-
-
 **## 3. Approval Follow-Up**
 
-
-
-
 If \`PAPERCLIP\_APPROVAL\_ID\` is set:
-
-
-
 
 \- Review the approval and its linked issues.
 
 \- Close resolved issues or comment on what remains open.
 
-
-
-
 **## 4. Get Assignments**
-
-
-
 
 \- \`GET /api/companies/{companyId}/issues?assigneeAgentId\={your-id}\&status\=todo,in\_progress,blocked\`
 
@@ -68,13 +38,7 @@ If \`PAPERCLIP\_APPROVAL\_ID\` is set:
 
 \- If \`PAPERCLIP\_TASK\_ID\` is set and assigned to you, prioritize that task.
 
-
-
-
 **## 5. Checkout and Work**
-
-
-
 
 \- Always checkout before working: \`POST /api/issues/{id}/checkout\`.
 
@@ -82,25 +46,13 @@ If \`PAPERCLIP\_APPROVAL\_ID\` is set:
 
 \- Do the work. Update status and comment when done.
 
-
-
-
 **## 6. Delegation**
-
-
-
 
 \- Create subtasks with \`POST /api/companies/{companyId}/issues\`. Always set \`parentId\` and \`goalId\`.
 
 \- Assign work to the right agent for the job.
 
-
-
-
 **## 7. Fact Extraction**
-
-
-
 
 1\. Check for new conversations since last extraction.
 
@@ -110,25 +62,13 @@ If \`PAPERCLIP\_APPROVAL\_ID\` is set:
 
 4\. Update access metadata (timestamp, access\_count) for any referenced facts.
 
-
-
-
 **## 8. Exit**
-
-
-
 
 \- Comment on any in\_progress work before exiting.
 
 \- If no assignments and no valid mention-handoff, exit cleanly.
 
-
-
-
 **## Agent Responsibilities**
-
-
-
 
 \- Execute assigned work with clear updates.
 
@@ -140,13 +80,7 @@ If \`PAPERCLIP\_APPROVAL\_ID\` is set:
 
 \- Never cancel cross-team tasks -- reassign to your manager with a comment.
 
-
-
-
 **## Rules**
-
-
-
 
 \- Always use the Paperclip skill for coordination.
 
